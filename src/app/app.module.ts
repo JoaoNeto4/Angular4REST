@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,29 +18,29 @@ import { TabViewModule } from 'primeng/tabview';
 import { TooltipModule } from 'primeng/tooltip';
 
 import { AppComponent } from './app.component';
-import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
-import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
+import { MessageComponent } from './message/message.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
+import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
 import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
-import { MessageComponent } from './message/message.component';
-import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
+
+import { LancamentosModule } from './lancamentos/lancamentos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LancamentosPesquisaComponent,
     NavbarComponent,
     PessoasPesquisaComponent,
-    LancamentoCadastroComponent,
+    PessoasGridComponent,
     PessoaCadastroComponent,
     MessageComponent,
-    LancamentosGridComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+
+    LancamentosModule,
 
     ButtonModule,
     CalendarModule,
@@ -52,8 +53,7 @@ import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.co
     SelectButtonModule,
     TableModule,
     TabViewModule,
-    TooltipModule,
-
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
