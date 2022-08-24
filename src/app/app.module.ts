@@ -1,5 +1,4 @@
-import { LancamentoService } from './lancamentos/lancamento.service';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -9,7 +8,6 @@ import { CoreModule } from './core/core.module';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { PessoasModule } from './pessoas/pessoas.module';
 
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,10 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     LancamentosModule,
     PessoasModule,
-    HttpClientModule
-
   ],
-  providers: [LancamentoService],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
