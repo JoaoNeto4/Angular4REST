@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 import { LancamentoService } from './../lancamento.service';
@@ -9,17 +10,17 @@ import { LancamentoService } from './../lancamento.service';
 })
 export class LancamentosPesquisaComponent implements OnInit {
 
-  lancamentos: any[] = [] ;
+  descricao: string = '';
+  lancamentos: any[] = [];
 
-
-  constructor(private lancamentoService: LancamentoService) {}
+  constructor(private lancamentoService: LancamentoService) { }
 
   ngOnInit(): void {
     this.pesquisar();
   }
 
   pesquisar(): void {
-    this.lancamentoService.pesquisar()
+    this.lancamentoService.pesquisar({ descricao: this.descricao })
       .then(lancamentos => this.lancamentos = lancamentos);
   }
 
