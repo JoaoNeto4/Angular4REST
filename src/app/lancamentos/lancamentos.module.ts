@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,7 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
     CommonModule,
     FormsModule,
     HttpClientModule,
+    RouterModule,
 
     InputNumberModule,
     InputTextModule,
