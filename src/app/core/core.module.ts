@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { CommonModule, DatePipe, registerLocaleData } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
@@ -54,7 +55,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
     MessageService,
     ConfirmationService,
-    TranslateService
+    TranslateService,
+    Title
   ]
 })
 export class CoreModule { }
