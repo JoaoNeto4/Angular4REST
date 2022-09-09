@@ -1,4 +1,3 @@
-import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -17,13 +16,13 @@ import { TooltipModule } from 'primeng/tooltip';
 import { SharedModule } from '../shared/shared.module';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
+import { LancamentosRoutingModule } from './lancamentos-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    RouterModule,
 
     InputNumberModule,
     InputTextModule,
@@ -35,12 +34,13 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
     SelectButtonModule,
     DropdownModule,
 
-    SharedModule
+    SharedModule,
+    LancamentosRoutingModule
   ],
   declarations: [
     LancamentoCadastroComponent,
     LancamentosPesquisaComponent
   ],
-  exports: [ ]
+  exports: []
 })
 export class LancamentosModule { }
