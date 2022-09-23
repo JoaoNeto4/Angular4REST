@@ -1,10 +1,10 @@
-import { Title } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { CommonModule, DatePipe, registerLocaleData } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
 
 import { NgModule } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -57,8 +57,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
     MessageService,
     ConfirmationService,
+    Title,
     TranslateService,
-    Title
   ]
 })
 export class CoreModule { }
