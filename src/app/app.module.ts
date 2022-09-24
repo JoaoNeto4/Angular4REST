@@ -23,6 +23,7 @@ import { SegurancaModule } from './seguranca/seguranca.module';
     LancamentosModule,
     PessoasModule,
     SegurancaModule,
+
     AppRoutingModule
   ],
   providers: [],
