@@ -3,8 +3,9 @@ import { Title } from '@angular/platform-browser';
 
 import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
-import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 
+import { AuthService } from './../../seguranca/auth.service';
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { LancamentoFiltro, LancamentoService } from './../lancamento.service';
 
 @Component({
@@ -14,7 +15,6 @@ import { LancamentoFiltro, LancamentoService } from './../lancamento.service';
 })
 export class LancamentosPesquisaComponent implements OnInit {
 
-
   filtro = new LancamentoFiltro();
 
   totalRegistros: number = 0
@@ -23,6 +23,7 @@ export class LancamentosPesquisaComponent implements OnInit {
   @ViewChild('tabela') grid!: Table;
 
   constructor(
+    private auth: AuthService,
     private lancamentoService: LancamentoService,
     private errorHandler: ErrorHandlerService,
     private messageService: MessageService,
@@ -73,5 +74,7 @@ export class LancamentosPesquisaComponent implements OnInit {
       })
   }
 
-
+  naoTemPermissao(permissao: string) {
+    return !this.auth.temPermissao(permissao);
+  }
 }
