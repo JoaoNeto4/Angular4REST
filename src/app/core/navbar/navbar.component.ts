@@ -6,7 +6,7 @@ import { AuthService } from './../../seguranca/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
   exibindoMenu: boolean = false;
   usuarioLogado: string = ''
@@ -16,4 +16,9 @@ export class NavbarComponent {
   ngOnInit() {
     this.usuarioLogado = this.auth.jwtPayload?.nome;
   }
+
+  temPermissao(permissao: string) {
+    return this.auth.temPermissao(permissao);
+  }
+
 }
