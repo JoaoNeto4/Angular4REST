@@ -1,3 +1,4 @@
+
 import { NaoAutorizadoComponent } from './nao-autorizado.component';
 import { CommonModule, DatePipe, registerLocaleData } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
