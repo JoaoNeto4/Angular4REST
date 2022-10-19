@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ErrorHandlerService } from '../../core/error-handler.service';
-import { Pessoa } from '../../core/model';
+import { Pessoa, Contato } from '../../core/model';
 import { PessoaService } from '../pessoa.service';
 
 @Component({
@@ -16,6 +16,7 @@ export class PessoaCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
   exbindoFormularioContato = false;
+  contato?: Contato;
 
   constructor(
     private pessoaService: PessoaService,
@@ -38,6 +39,7 @@ export class PessoaCadastroComponent implements OnInit {
 
   prepararNovoContato() {
     this.exbindoFormularioContato = true;
+    this.contato = new Contato();
   }
 
   get editando() {
