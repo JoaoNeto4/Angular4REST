@@ -18,6 +18,7 @@ export class PessoaCadastroComponent implements OnInit {
   exbindoFormularioContato = false;
   contato?: Contato;
   contatoIndex?: number;
+  estados: any[] = [];
 
   constructor(
     private pessoaService: PessoaService,
@@ -33,9 +34,18 @@ export class PessoaCadastroComponent implements OnInit {
 
     this.title.setTitle('Nova pessoa');
 
+    this.carregarEstados();
+
     if (codigoPessoa && codigoPessoa !== 'nova') {
       this.carregarPessoa(codigoPessoa);
     }
+  }
+
+  carregarEstados() {
+    this.pessoaService.listarEstados().then(lista => {
+      this.estados = lista.map(uf => ({ label: uf.nome, value: uf.codigo }));
+    })
+      .catch(erro => this.errorHandler.handle(erro));
   }
 
   clonarContato(contato: Contato): Contato{
